@@ -27,6 +27,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import ChatOllama
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_community.vectorstores import Chroma
 from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers.ensemble import EnsembleRetriever
@@ -39,11 +40,14 @@ COLLECTION_NAME = os.getenv("COLLECTION_NAME", "stackoverflow_python")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL_ID", "sentence-transformers/all-MiniLM-L6-v2")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma2:2b")
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+HF_MODEL_ID = os.getenv("LLM_MODEL_ID", "mistralai/Mistral-7B-Instruct-v0.3")
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN", "")
+USE_OLLAMA = os.getenv("USE_OLLAMA", "true").lower() == "true"  # false on Render
 TOP_K = int(os.getenv("TOP_K_RETRIEVAL", "10"))
 TOP_K_RERANK = int(os.getenv("TOP_K_RERANK", "3"))
 MAX_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "512"))
 MAX_RETRIES = 2
-NUM_QUERIES = 3  # multi-query variants
+NUM_QUERIES = 3
 
 
 # ---------------------------------------------------------------------------
@@ -104,12 +108,22 @@ def get_vectorstore():
 def get_llm():
     global _llm
     if _llm is None:
-        _llm = ChatOllama(
-            model=OLLAMA_MODEL,
-            base_url=OLLAMA_BASE_URL,
-            temperature=0.1,
-            num_predict=MAX_TOKENS,
-        )
+        if USE_OLLAMA:
+            _llm = ChatOllama(
+                model=OLLAMA_MODEL,
+                base_url=OLLAMA_BASE_URL,
+                temperature=0.1,
+                num_predict=MAX_TOKENS,
+            )
+        else:
+            # HuggingFace Inference API — used on Render/cloud deployment
+            endpoint = HuggingFaceEndpoint(
+                repo_id=HF_MODEL_ID,
+                huggingfacehub_api_token=HF_TOKEN,
+                temperature=0.1,
+                max_new_tokens=MAX_TOKENS,
+            )
+            _llm = ChatHuggingFace(llm=endpoint)
     return _llm
 
 

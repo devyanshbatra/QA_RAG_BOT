@@ -15,8 +15,8 @@ __pycache__/
 *.pyd
 .Python
 
-# Vector store (large binary files — rebuild with ingest.py)
-vector_store/
+# Vector store is committed via Git LFS — do NOT ignore it
+# vector_store/
 
 # Semantic cache
 cache/
