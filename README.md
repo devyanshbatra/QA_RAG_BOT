@@ -95,8 +95,8 @@ FastAPI Response (answer + sources + metadata)
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/python-qa-assistant
-cd python-qa-assistant
+git clone https://github.com/devyanshbatra/QA_RAG_BOT
+cd QA_RAG_BOT
 pip install -r requirements.txt
 ```
 
@@ -146,7 +146,7 @@ Open [http://localhost:8000/docs](http://localhost:8000/docs) for interactive Sw
 
 ## Deployed App
 
-> **Live URL:** `https://YOUR_DEPLOYED_URL_HERE`
+> **Live URL:** Not deployed (GPU + persistent disk required — see deployment notes below)
 
 ## Tech Stack
 
