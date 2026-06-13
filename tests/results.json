@@ -1,0 +1,322 @@
+[
+  {
+    "query": "How do I read a CSV file in Python using pandas?",
+    "status": "pass",
+    "question": "How do I read a CSV file in Python using pandas?",
+    "answer": "Let's explore how to read CSV files in Python using the powerful Pandas library! \n\n**Explanation:**\n\nCSV (Comma Separated Values) files are a common way to store tabular data.  Pandas provides a convenient way to load this data into a structured format for analysis and manipulation. Here's a breakdown of the process:\n\n1. **Import Pandas:** Begin by importing the Pandas library using `import pandas as pd`. This gives you access to all its functions and classes.\n2. **Read the CSV File:** The core function for reading CSV files is `pd.read_csv()`. You provide it with the path to your file, and it returns a Pandas DataFrame, which is like a table of data.\n\n**Code Example:**\n\n```python\nimport pandas as pd\n\n# Replace 'your_file.csv' with the actual path to your CSV file\ndf = pd.read_csv('your_file.csv') \n\nprint(df)  \n```\n\n**Explanation of the Code:**\n\n* **`import pandas as pd`**: This line imports the Pandas library and gives it an alias `pd` for easier use throughout the code.\n* **`df = pd.read_csv('your_file.csv')`**: This is where the magic happens! We call the `read_csv()` function from Pandas, passing in the path to our CSV file. The result is stored in a variable named `df`.\n* **`print(df)`**:  This line prints the contents of the DataFrame `df`, allowing you to see the data loaded into your program.\n\n**Key Points:**\n\n* **File Path:** Make sure you replace 'your_file.csv' with the actual path to your CSV file on your system.\n* **Data Types:** Pandas automatically infers data types for each column in the DataFrame.\n* **Headers:**  The first row of your CSV file often contains headers that describe the columns.\n\n**Common Pitfalls and Edge Cases:**\n\n* **Missing Headers:** If your CSV file doesn't have a header row, use `pd.read_csv(file, header=None)`.\n* **Delimiter Issues:**  If your CSV uses a different delimiter, use the `sep` parameter: `pd.read_csv('your_file.csv', sep='\\t')`\n* **Large Files:** For very large CSV files, use the `chunksize` parameter for better performance.",
+    "sources": [
+      {
+        "title": "Reading CSV file with pandas - Stack Overflow",
+        "tags": "python pandas csv",
+        "answer_score": 95,
+        "snippet": "Use pd.read_csv('path/to/your/file.csv') to load a CSV file into a DataFrame. The function automatically detects headers and data types."
+      },
+      {
+        "title": "pandas read_csv dtype inference issue",
+        "tags": "python parsing pandas csv",
+        "answer_score": 42,
+        "snippet": "df = pd.read_csv('/path/to/your.csv') — specify dtype parameter to override automatic type inference for columns."
+      },
+      {
+        "title": "How to handle missing values when reading CSV with pandas",
+        "tags": "python pandas csv data-cleaning",
+        "answer_score": 38,
+        "snippet": "Use na_values parameter in read_csv to specify additional strings to recognize as NaN."
+      }
+    ],
+    "rewritten_query": "How to read a CSV file into a pandas DataFrame using pd.read_csv()",
+    "multi_queries": [
+      "How to read a CSV file into a pandas DataFrame using pd.read_csv()",
+      "pandas load CSV data into DataFrame Python",
+      "import CSV file Python pandas read_csv example"
+    ],
+    "hyde_document": "To read a CSV file in Python using pandas, use pd.read_csv('file.csv'). This returns a DataFrame object.",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.87,
+    "retry_count": 0,
+    "latency_ms": 11243.45,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "What is the difference between a list and a tuple in Python?",
+    "status": "pass",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "answer": "Let's break down the key differences between lists and tuples in Python. \n\n**Explanation:**\n\nAt their core, lists and tuples are both used to store collections of data in Python.  The main distinction lies in their mutability (the ability to change their contents). \n\n* **Lists:** Lists are mutable, meaning you can modify their elements after creation. You can add, remove, or change items within a list.\n   ```python\n   my_list = [1, 2, 3]  # Create a list\n   my_list[0] = 5      # Change the first element to 5\n   print(my_list)       # Output: [5, 2, 3]\n   ```\n\n* **Tuples:** Tuples are immutable. Once created, their elements cannot be changed.  They are often used when you need a fixed set of data that shouldn't be altered.\n   ```python\n   my_tuple = (10, 20, 30) # Create a tuple\n   # my_tuple[1] = 40  # This will raise a TypeError!\n   print(my_tuple)       # Output: (10, 20, 30)\n   ```\n\n**Key Points:**\n\n* **Mutability:** Lists are mutable; tuples are immutable.\n* **Use Cases:**  Lists are for dynamic data manipulation, while tuples are for fixed data storage.\n* **Performance:** Tuples are slightly faster and use less memory than lists due to their immutability. [Source 1]\n* **Hashability:** Tuples can be used as dictionary keys; lists cannot.",
+    "sources": [
+      {
+        "title": "Python list vs tuple — when to use which? - Stack Overflow",
+        "tags": "python performance list tuples",
+        "answer_score": 89,
+        "snippet": "The key difference: lists are mutable (can be changed), tuples are immutable (cannot be changed). Use tuples for fixed data, lists for dynamic collections."
+      },
+      {
+        "title": "Python: variable-length tuples",
+        "tags": "python performance list python-3.x tuples",
+        "answer_score": 10,
+        "snippet": "In my mind, the only interesting distinction between tuples and lists is that lists are mutable and tuples are not."
+      },
+      {
+        "title": "How To Reduce Python Script Memory Usage",
+        "tags": "python optimization memory",
+        "answer_score": 20,
+        "snippet": "If you make big use of lists, consider replacing them with tuples where immutability is acceptable — tuples use less memory."
+      }
+    ],
+    "rewritten_query": "What are the key differences between lists and tuples in Python regarding mutability and indexing?",
+    "multi_queries": [
+      "What are the key differences between lists and tuples in Python regarding mutability and indexing?",
+      "Python list vs tuple performance memory difference",
+      "when to use list vs tuple in Python"
+    ],
+    "hyde_document": "Lists are mutable sequences while tuples are immutable. Use lists when you need to modify data, tuples for fixed collections.",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.91,
+    "retry_count": 0,
+    "latency_ms": 11437.02,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "How to handle exceptions in Python with try except?",
+    "status": "pass",
+    "question": "How to handle exceptions in Python with try except?",
+    "answer": "Let's dive into how to use `try...except` blocks in Python for handling exceptions.  \n\n**Explanation:**\n\nThe `try...except` block is a fundamental part of error handling in Python. It allows you to anticipate potential problems (exceptions) that might occur during the execution of your code and gracefully manage them. \n\nHere's how it works:\n\n1. **`try:` Block:**  This block contains the code that you want to execute, but which could potentially raise an exception.\n2. **`except:` Block:** This block is executed if an exception occurs within the `try` block.\n3. **`else:` Block (Optional):**  This block executes only if no exception occurred in the `try` block.\n\n**Code Example:**\n\n```python\ntry:\n    # Code that might raise an exception\n    result = 10 / 0  # This will cause a ZeroDivisionError\nexcept ZeroDivisionError:\n    print(\"You cannot divide by zero!\")\nelse:\n    print(f\"Result: {result}\") \nfinally:\n    print(\"This always runs\")\n```\n\n**Key Points:**\n\n* **Specificity:** Catch specific exceptions rather than bare `except` — avoids masking bugs. [Source 1]\n* **Multiple except blocks:** You can chain multiple `except` clauses for different exception types.\n* **finally:** Always executes — great for cleanup like closing files or DB connections.",
+    "sources": [
+      {
+        "title": "Python: try-catch-else without handling the exception - Stack Overflow",
+        "tags": "python exception try-catch",
+        "answer_score": 24,
+        "snippet": "The try-except-else-finally pattern is the complete Python exception handling structure. Use specific exception types to avoid catching unintended errors."
+      },
+      {
+        "title": "Error handling when importing modules",
+        "tags": "python error-handling module cross-platform",
+        "answer_score": 17,
+        "snippet": "try-except is a common Pythonic way to handle errors. Quoting Dive into Python: exceptions are used for flow control in Python."
+      },
+      {
+        "title": "How to continue with next line in a Python's try block?",
+        "tags": "python exception",
+        "answer_score": 8,
+        "snippet": "Use a loop with try-except inside to continue processing even when one iteration raises an exception."
+      }
+    ],
+    "rewritten_query": "How to use `try...except` blocks for exception handling in Python",
+    "multi_queries": [
+      "How to use try...except blocks for exception handling in Python",
+      "Python exception handling try except else finally example",
+      "how to catch specific exceptions in Python"
+    ],
+    "hyde_document": "Use try/except blocks to catch exceptions: try: risky_code() except ValueError as e: handle_error(e)",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.89,
+    "retry_count": 0,
+    "latency_ms": 10853.11,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "How do I use decorators in Python?",
+    "status": "pass",
+    "question": "How do I use decorators in Python?",
+    "answer": "Let's dive into the world of decorators in Python! \n\n**Explanation:**\n\nDecorators are a powerful way to modify the behavior of functions without directly altering their code. They act like \"wrappers\" around your functions, adding extra functionality before or after execution.\n\n**Why Use Decorators?**\n\n* **Code Reusability:** Apply the same decorator to multiple functions.\n* **Separation of Concerns:** Keep logging, timing, auth logic separate from business logic.\n* **Maintainability:** Changes to cross-cutting concerns in one place.\n\n**Code Example: A Simple Timing Decorator**\n\n```python\nimport functools\nimport time\n\ndef timer(func):\n    @functools.wraps(func)  # Preserves original function metadata\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)  # Call the original function\n        end = time.time()\n        print(f\"{func.__name__} took {end - start:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(1)\n\nslow_function()  # Output: slow_function took 1.0012s\n```\n\n**Key Points:**\n\n* Always use `@functools.wraps(func)` to preserve the original function's metadata. [Source 3]\n* Decorators are applied bottom-up when stacking multiple decorators.\n* Built-in decorators: `@staticmethod`, `@classmethod`, `@property`.",
+    "sources": [
+      {
+        "title": "Python - Decorators - Stack Overflow",
+        "tags": "python python-decorators",
+        "answer_score": 17,
+        "snippet": "A decorator is a function that takes another function and extends its behavior without explicitly modifying it. Use @functools.wraps to preserve metadata."
+      },
+      {
+        "title": "Any AOP support library for Python?",
+        "tags": "python aop decorators",
+        "answer_score": 22,
+        "snippet": "Python had AOP since the beginning via decorators. See the defining PEP for decorators for great examples."
+      },
+      {
+        "title": "python: decorate a class by defining the decorator as a class",
+        "tags": "python decorator",
+        "answer_score": 12,
+        "snippet": "You can also implement decorators as classes using __call__ method for more complex decorator logic."
+      }
+    ],
+    "rewritten_query": "How to implement decorators in Python for function modification",
+    "multi_queries": [
+      "How to implement decorators in Python for function modification",
+      "Python decorator pattern with functools.wraps example",
+      "how to write a custom decorator in Python"
+    ],
+    "hyde_document": "A Python decorator wraps a function: def my_decorator(func): def wrapper(*args): return func(*args); return wrapper",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.88,
+    "retry_count": 0,
+    "latency_ms": 11617.79,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "What is the difference between deepcopy and shallow copy in Python?",
+    "status": "pass",
+    "question": "What is the difference between deepcopy and shallow copy in Python?",
+    "answer": "Let's break down the differences between `copy.deepcopy()` and `copy.copy()` in Python. \n\n**Understanding Shallow vs. Deep Copies**\n\n* **Shallow Copy:** Creates a new object but only copies references to nested objects. Changes to nested objects affect both copies.\n* **Deep Copy:** Recursively creates new instances for all nested objects. Completely independent from the original.\n\n**Code Example:**\n\n```python\nimport copy\n\noriginal = [[1, 2, 3], [4, 5, 6]]\n\n# Shallow copy — inner lists are still shared\nshallow = copy.copy(original)\nshallow[0][0] = 99\nprint(original[0][0])  # Output: 99 (original affected!)\n\n# Deep copy — fully independent\noriginal2 = [[1, 2, 3], [4, 5, 6]]\ndeep = copy.deepcopy(original2)\ndeep[0][0] = 99\nprint(original2[0][0])  # Output: 1 (original NOT affected)\n```\n\n**Key Points:**\n\n* Use `copy.copy()` for simple objects with no nesting. [Source 1]\n* Use `copy.deepcopy()` when working with nested lists, dicts, or custom objects. [Source 2]\n* Deep copy is slower — avoid for large objects when shallow copy suffices.",
+    "sources": [
+      {
+        "title": "Python: Implementation of shallow and deep copy constructors - Stack Overflow",
+        "tags": "python copy-constructor deep-copy",
+        "answer_score": 17,
+        "snippet": "Shallow copy creates a new object but references the same nested objects. Deep copy recursively copies everything."
+      },
+      {
+        "title": "Nested python list assignment",
+        "tags": "python list deep-copy",
+        "answer_score": 7,
+        "snippet": "Use copy.deepcopy() for nested lists: import copy; blist = copy.deepcopy(alist) — changes to blist won't affect alist."
+      },
+      {
+        "title": "How does Python establish equality between objects?",
+        "tags": "python object copy equality deep-copy",
+        "answer_score": 6,
+        "snippet": "deepcopy creates a completely independent copy — useful when you need to modify data without affecting the original."
+      }
+    ],
+    "rewritten_query": "What are the differences between deepcopy and shallow copy in Python's copy module?",
+    "multi_queries": [
+      "What are the differences between deepcopy and shallow copy in Python's copy module?",
+      "Python copy.copy vs copy.deepcopy nested objects example",
+      "when to use deepcopy vs shallow copy Python"
+    ],
+    "hyde_document": "copy.copy() creates a shallow copy (references shared), copy.deepcopy() creates a fully independent deep copy.",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.92,
+    "retry_count": 0,
+    "latency_ms": 12533.74,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "How to sort a dictionary by value in Python?",
+    "status": "pass",
+    "question": "How to sort a dictionary by value in Python?",
+    "answer": "Let's break down how to sort dictionaries based on their values in Python. \n\n**The Solution: sorted() with lambda**\n\n```python\nmy_dict = {'apple': 5, 'banana': 2, 'cherry': 8}\n\n# Sort by values ascending\nsorted_dict = dict(sorted(my_dict.items(), key=lambda item: item[1]))\nprint(sorted_dict)  # Output: {'banana': 2, 'apple': 5, 'cherry': 8}\n\n# Sort descending\nsorted_desc = dict(sorted(my_dict.items(), key=lambda item: item[1], reverse=True))\nprint(sorted_desc)  # Output: {'cherry': 8, 'apple': 5, 'banana': 2}\n```\n\n**Explanation:**\n\n* `my_dict.items()` returns key-value pairs as tuples.\n* `key=lambda item: item[1]` tells sorted() to sort by the value (index 1).\n* `dict()` converts the sorted list back to a dictionary.\n\n**Key Points:**\n\n* Python 3.7+ dicts maintain insertion order — so sorting works as expected. [Source 1]\n* Use `operator.itemgetter(1)` as a faster alternative to lambda for large dicts.\n* For top-N items, use `heapq.nlargest()` instead of sorting the entire dict.",
+    "sources": [
+      {
+        "title": "How do I sort a dictionary by value in Python? - Stack Overflow",
+        "tags": "python dictionary sorting",
+        "answer_score": 78,
+        "snippet": "sorted(d.items(), key=lambda x: x[1]) sorts by value. Wrap in dict() to get back a dictionary. Use reverse=True for descending order."
+      },
+      {
+        "title": "sort on multiple parameters in list of dictionaries/lists",
+        "tags": "python list python-2.7 sorting dictionary",
+        "answer_score": 4,
+        "snippet": "Use operator.itemgetter for cleaner multi-key sorting of dictionaries."
+      },
+      {
+        "title": "Sorting multilevel dict in python",
+        "tags": "python sorting dictionary",
+        "answer_score": 4,
+        "snippet": "sorted(mydict.items(), key=lambda x: x[1]) — note you cannot sort a dict in-place, only create a new sorted one."
+      }
+    ],
+    "rewritten_query": "How to sort a Python dictionary by values using the sorted function",
+    "multi_queries": [
+      "How to sort a Python dictionary by values using the sorted function",
+      "Python sort dict by value ascending descending example",
+      "dictionary sorting lambda itemgetter Python"
+    ],
+    "hyde_document": "Sort a dict by value: sorted_dict = dict(sorted(d.items(), key=lambda x: x[1]))",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.90,
+    "retry_count": 0,
+    "latency_ms": 10422.89,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "How do I use list comprehensions in Python?",
+    "status": "pass",
+    "question": "How do I use list comprehensions in Python?",
+    "answer": "Let's dive into the world of list comprehensions in Python!\n\n**Explanation:**\n\nList comprehensions provide a concise, readable way to create lists. The general syntax is:\n\n```python\n[expression for item in iterable if condition]\n```\n\n**Examples:**\n\n```python\n# Basic: squares of numbers 1-10\nsquares = [x**2 for x in range(1, 11)]\nprint(squares)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n# With condition: only even numbers\nevens = [x for x in range(20) if x % 2 == 0]\nprint(evens)  # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# String transformation\nwords = ['hello', 'world', 'python']\nupper = [w.upper() for w in words]\nprint(upper)  # ['HELLO', 'WORLD', 'PYTHON']\n\n# Nested list comprehension (flatten a 2D list)\nmatrix = [[1,2,3],[4,5,6],[7,8,9]]\nflat = [num for row in matrix for num in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]\n```\n\n**Key Points:**\n\n* List comprehensions are faster than equivalent for loops for simple operations. [Source 2]\n* Keep them readable — if logic is complex, use a regular for loop instead.\n* Use generator expressions `()` instead of `[]` for memory efficiency with large datasets.",
+    "sources": [
+      {
+        "title": "Python list comprehensions explained - Stack Overflow",
+        "tags": "python list-comprehension",
+        "answer_score": 67,
+        "snippet": "[expression for item in iterable if condition] — the most Pythonic way to build lists. Faster than for loops for simple transformations."
+      },
+      {
+        "title": "Using list comprehension to setup a list of unique dictionaries in Python",
+        "tags": "python dictionary list-comprehension nested-lists",
+        "answer_score": 4,
+        "snippet": "List comprehensions work with any iterable and can include nested loops for complex transformations."
+      },
+      {
+        "title": "How do I create a list of Python lambdas in a list comprehension?",
+        "tags": "python lambda scope closures list-comprehension",
+        "answer_score": 17,
+        "snippet": "Be careful with closures in list comprehensions — use default argument binding to capture loop variables correctly."
+      }
+    ],
+    "rewritten_query": "How to implement list comprehensions in Python for concise list creation",
+    "multi_queries": [
+      "How to implement list comprehensions in Python for concise list creation",
+      "Python list comprehension syntax examples with conditions",
+      "list comprehension vs for loop Python performance"
+    ],
+    "hyde_document": "List comprehension syntax: [expr for x in iterable if condition]. Example: squares = [x**2 for x in range(10)]",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.86,
+    "retry_count": 0,
+    "latency_ms": 10711.25,
+    "cache_hit": false,
+    "cache_similarity": null
+  },
+  {
+    "query": "How to connect to a SQLite database in Python?",
+    "status": "pass",
+    "question": "How to connect to a SQLite database in Python?",
+    "answer": "Let's break down how to connect to a SQLite database using Python.\n\n**Explanation:**\n\nSQLite is a lightweight, file-based database engine built into Python's standard library — no installation needed. The `sqlite3` module provides everything you need.\n\n**Code Example:**\n\n```python\nimport sqlite3\n\n# Connect to database (creates file if it doesn't exist)\nconn = sqlite3.connect('my_database.db')\ncursor = conn.cursor()\n\n# Create a table\ncursor.execute('''\n    CREATE TABLE IF NOT EXISTS users (\n        id INTEGER PRIMARY KEY,\n        name TEXT NOT NULL,\n        age INTEGER\n    )\n''')\n\n# Insert data\ncursor.execute(\"INSERT INTO users (name, age) VALUES (?, ?)\", ('Alice', 30))\nconn.commit()  # Save changes\n\n# Query data\ncursor.execute(\"SELECT * FROM users\")\nrows = cursor.fetchall()\nfor row in rows:\n    print(row)\n\n# Always close the connection\nconn.close()\n```\n\n**Better Practice — Use Context Manager:**\n\n```python\nwith sqlite3.connect('my_database.db') as conn:\n    cursor = conn.cursor()\n    cursor.execute(\"SELECT * FROM users\")\n    print(cursor.fetchall())\n# Connection auto-closed here\n```\n\n**Key Points:**\n\n* Use `?` placeholders for parameterized queries — prevents SQL injection. [Source 2]\n* Always call `conn.commit()` after INSERT/UPDATE/DELETE.\n* Use `with` statement for automatic connection cleanup. [Source 1]",
+    "sources": [
+      {
+        "title": "SQLite cursor in Python with statement - Stack Overflow",
+        "tags": "python sqlite cursor context-manager",
+        "answer_score": 7,
+        "snippet": "Use 'with sqlite3.connect() as conn' for automatic transaction management and connection cleanup."
+      },
+      {
+        "title": "Python SQLite3 parameterized queries - Stack Overflow",
+        "tags": "python sqlite sql-injection",
+        "answer_score": 45,
+        "snippet": "Always use ? placeholders for user input: cursor.execute('SELECT * FROM t WHERE id=?', (user_id,)) — never use string formatting."
+      },
+      {
+        "title": "Relative paths in scripts executed by cron jobs",
+        "tags": "python sqlite cron",
+        "answer_score": 8,
+        "snippet": "Use os.path.join(os.path.dirname(__file__), 'my_db.db') to ensure correct database path regardless of working directory."
+      }
+    ],
+    "rewritten_query": "How to establish a connection to a SQLite database using Python?",
+    "multi_queries": [
+      "How to establish a connection to a SQLite database using Python?",
+      "Python sqlite3 connect create table insert query example",
+      "sqlite3 context manager best practices Python"
+    ],
+    "hyde_document": "Connect to SQLite: conn = sqlite3.connect('db.db'); cursor = conn.cursor(); cursor.execute(SQL); conn.commit(); conn.close()",
+    "hallucination_detected": false,
+    "answer_grade": "good",
+    "confidence_score": 0.93,
+    "retry_count": 0,
+    "latency_ms": 11322.31,
+    "cache_hit": false,
+    "cache_similarity": null
+  }
+]

@@ -1,0 +1,50 @@
+# Environment
+.env
+.env.local
+
+# Virtual environments
+venv/
+venv312/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Vector store (large binary files — rebuild with ingest.py)
+vector_store/
+
+# Semantic cache
+cache/
+
+# Data (large CSV files — download with download_and_preprocess.py)
+data/raw/
+data/processed_qa.json
+
+# Keep the 5k sample for quick testing
+!data/processed_qa_5k.json
+
+# Logs
+*.log
+install_log.txt
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

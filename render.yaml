@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: python-qa-assistant
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HUGGINGFACEHUB_API_TOKEN
+        sync: false
+      - key: CHROMA_PERSIST_DIR
+        value: ./vector_store
+      - key: COLLECTION_NAME
+        value: stackoverflow_python
